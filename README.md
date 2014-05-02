@@ -13,7 +13,7 @@ Where [sig] is the passphrase signature output when first creating the mount. Th
 
 
 ecryptfs_mount.py first scans /etc/fstab for available ecryptfs file systems, and then the output of mount to determine which of them are already mounted. Ecryptfs mounts that are not currently mounted are added to a listbox to select from, the passphrase can be entered in a line edit, and a mount button attempts to mount the selected file system.
-The passphrase is written in the clear to a text file /tmp/ecfspwXXXX (where XXXX is a 64bit random number to make interception less likely), and passed to mount.ecryptfs via passphrase_passwd_file. This should avoid exposing the clear text passphrase through mount.
+The passphrase is written in the clear to a text file /tmp/ecfspwXXXX (where XXXX is a 64bit random number to make interception less likely), and passed to mount.ecryptfs via passphrase_passwd_file. The temporary file is deleted immediately after the mount succeeds or fails. This should avoid exposing the clear text passphrase through mount.
 
 NOTES: I have no idea whether this mechanism is secure, or how secure. This is relatively untested, i.e. It Works For Me(tm) on Kubuntu 14.04. 
 
