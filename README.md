@@ -3,7 +3,7 @@ ecryptfsmount
 
 Python app to mount ecryptfs file systems from /etc/fstab
 
-If you want to set up more than one ecryptfs file system, you either have to mount them via the terminal or wrap the passphrase into your login password and set up scripts to mount them automatically. If you don't want to do one of these, you're stuck mounting via terminal. This is a small application to remedy that.
+If you want to set up more than one ecryptfs file system (separate folders for different purposes, or an ecryptfs inside a cloud storage sync folder, for example), you need to wrap the passphrase into your login password and set up scripts to mount automatically. If you don't want to do that (for instance because you don't want to automount on login for security reasons), you're stuck mounting via terminal everytime. This is a small application to remedy that.
 
 It still requires the ecryptfs and mount point to be properly set up in /etc/fstab. To mount without prompting, a few options are necessary. An example fstab entry:
 
