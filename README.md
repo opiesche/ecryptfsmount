@@ -9,7 +9,7 @@ It still requires the ecryptfs and mount point to be properly set up in /etc/fst
 
 /home/user/.encrypted /home/user/Encrypted ecryptfs user,noauto,rw,ecryptfs_sig=[sig],ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=n,ecryptfs_enable_filename_crypto=n,no_sig_cache 0 0
 
-Where [sig] is the passphrase signature output when first creating the mount. The passthrough and filename_crypto options have to match the options on creation of the ecryptfs mount.
+Where [sig] is the passphrase signature output when first creating the mount. The cipher, key_bytes, passthrough and filename_crypto options have to match the options on creation of the ecryptfs mount.
 
 
 ecryptfs_mount.py first scans /etc/fstab for available ecryptfs file systems, and then the output of mount to determine which of them are already mounted. Ecryptfs mounts that are not currently mounted are added to a listbox to select from, the passphrase can be entered in a line edit, and a mount button attempts to mount the selected file system.
